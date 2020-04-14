@@ -1,4 +1,0 @@
-id = 'id'
-secret = 'secret'
-token = 'token'
-url = 'url'
