@@ -25,7 +25,6 @@ class Settings:
 
 
 if __name__ == "__main__":
-    Settings()
     with Settings() as settings:
         mastodon = Mastodon(
             client_id=settings.id,
