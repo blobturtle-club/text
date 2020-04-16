@@ -1,4 +1,5 @@
 from mastodon import Mastodon
+import random
 import json
 import os
 
@@ -25,10 +26,21 @@ class Settings:
 
 
 if __name__ == "__main__":
-    with Settings() as settings:
-        mastodon = Mastodon(
-            client_id=settings.id,
-            client_secret=settings.secret,
-            access_token=settings.token,
-            api_base_url=settings.url
-        )
+    dog = 1
+    while dog == True:
+        response = input("Would you like to start?\nyes/no\n")
+        if response  == "yes" or response  == "y":
+            with Settings() as settings:
+                mastodon = Mastodon(
+                    client_id=settings.id,
+                    client_secret=settings.secret,
+                    access_token=settings.token,
+                    api_base_url=settings.url
+                )
+                dog = 0
+        elif response == "no" or response == "n":
+            print("Ok.")
+            exit()
+        else:
+            print("Type yes or no.")
+
